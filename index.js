@@ -7,9 +7,20 @@ const cors=require("cors")
 dotenv.config();
 
 const app = express();
+
+const allowedOrigins = ['http://localhost:3000', 'https://hackathon-dashboard-damnanuj.vercel.app'];
+
 app.use(cors({
-    origin: 'https://hackathon-dashboard-damnanuj.vercel.app/' 
-  }));
+  origin: function(origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+}));
 app.use(express.urlencoded({extended:true}))
 
 // Middleware to parse incoming JSON requests
