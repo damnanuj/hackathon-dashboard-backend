@@ -20,7 +20,7 @@ const upload = multer({ storage: storage });
 router.post('/create-challenge', upload.single('image'), async (req, res) => { // Match the field name with FormData
     try {
         const { challangeName, startDate, endDate, description, difficulty } = req.body;
-        const image = req.file ? `uploads/${req.file.filename}` : ''; // Use req.file directly
+        const image = req.file ? `/uploads/${req.file.filename}` : ''; // Use req.file directly
 
         console.log(challangeName, startDate, endDate, description, difficulty, image);
 
