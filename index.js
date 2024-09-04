@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: 'https://hackathon-dashboard-damnanuj.vercel.app/' // Adjust as needed
+    origin: 'https://hackathon-dashboard-damnanuj.vercel.app/' 
   }));
 app.use(express.urlencoded({extended:true}))
 
