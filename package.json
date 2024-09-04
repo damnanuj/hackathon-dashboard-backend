@@ -1,17 +1,18 @@
 {
-  "name": "y",
+  "name": "index",
   "version": "1.0.0",
   "description": "hackathon dashboard backend",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "author": "damnanuj",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.7",
     "connect-mongodb-session": "^5.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongodb": "^6.8.0",
