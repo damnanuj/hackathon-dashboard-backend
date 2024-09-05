@@ -15,14 +15,9 @@ const allowedOrigins = [
 // Serve the `uploads` directory as static to access uploaded images
 app.use("/uploads", express.static("uploads"));
 
-app.use(
-  cors({
-    allowedOrigins: [
-      "http://localhost:3000",
-      "https://hackathon-dashboard-damnanuj.vercel.app",
-    ],
-  })
-);
+app.use(cors({
+  origin: 'https://hackathon-dashboard-damnanuj.vercel.app',
+}));
 app.use(express.urlencoded({ extended: true }));
 
 // Middleware to parse incoming JSON requests
