@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-// const allowedOrigins = ['http://localhost:3000', 'https://hackathon-dashboard-damnanuj.vercel.app'];
+const allowedOrigins = ['http://localhost:3000', 'https://hackathon-dashboard-damnanuj.vercel.app'];
 
 app.use(cors());
 app.use(express.urlencoded({extended:true}))
