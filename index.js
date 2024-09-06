@@ -3,18 +3,21 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/dbConnection");
 const challengeRoutes = require("./routes/challengeRoutes");
 
+
 const cors = require("cors");
 dotenv.config();
 
 const app = express();
 
+// Serve the `uploads` directory as static to access uploaded images
+app.use("/uploads", express.static("uploads"));
+
 const allowedOrigins = [
   "http://localhost:3000",
   "https://hackathon-dashboard-damnanuj.vercel.app",
-  "https://hackathon-dashboard-backend.onrender.com"
+  
 ];
-// Serve the `uploads` directory as static to access uploaded images
-app.use("/uploads", express.static("uploads"));
+
 
 app.use(cors({
   origin: allowedOrigins,
